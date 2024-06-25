@@ -108,6 +108,7 @@ const Packages = () => {
                         <Link to={`/packages/${index}`}>
                           <button
                             className="packages_btn"
+                            style={{cursor:"pointer"}}
                             onClick={() => dispatch(categoryData(index))}
                           >
                             See More
@@ -139,7 +140,7 @@ const Packages = () => {
                         {item.price} Per person
                       </p>
                       <Link to="/">
-                        <button className="packages_btn">See More</button>
+                        <button style={{cursor:"pointer"}} className="packages_btn">See More</button>
                       </Link>
                     </Card.Description>
                   </div>
@@ -166,7 +167,7 @@ const Packages = () => {
                         {item.price} Per person
                       </p>
                       <Link to="/">
-                        <button className="packages_btn">See More</button>
+                        <button style={{cursor:"pointer"}} className="packages_btn">See More</button>
                       </Link>
                     </Card.Description>
                   </div>
