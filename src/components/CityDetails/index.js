@@ -44,7 +44,8 @@ const CityDetails = () => {
   const [endDate, setEndDate] = useState(new Date());
   const [guest, setGuest] = useState({ adult: 0, child: 0, infant: 0 });
   const [position, setPosition] = useState({ lat: null, lng: null });
- 
+  const [totalNightsPrice,setTotalNightPrice] = useState(0)
+
 
   // open weather map code -----------------------
 
@@ -71,13 +72,14 @@ const CityDetails = () => {
     }
   }, [cityInfo]);
 
-  let daysToStay = endDate.getDate() - startDate.getDate();
-  let totalNightsPrice = cartItem.price * daysToStay;
+  
 
   const handleCounter = (of, counter) => {
+    let daysToStay = endDate.getDate() - startDate.getDate();
     const newGuest = { ...guest };
     newGuest[of] = counter;
     setGuest(newGuest);
+    setTotalNightPrice((((cartItem.price * newGuest.child) / 2) + cartItem.price * newGuest.adult + cartItem.price * newGuest.infant) * daysToStay)
   };
   const dispatch = useDispatch();
   useEffect(() => {
@@ -277,10 +279,11 @@ const CityDetails = () => {
                         </Grid>
                       </Popup>
                     </div>
-                    {daysToStay === 0 ? (
+                    {((endDate.getDate() - startDate.getDate()) === 0 && !(guest.adult ||guest.child || guest.infant)) ? (
                       <Button
                         className="check-availability-btn"
                         content="Check Availablity"
+                        onClick={() => alert("please select the checkout date && person to stay!")}
                         style={{ background: "#01afd1" }}
                         circular
                       />
@@ -292,14 +295,14 @@ const CityDetails = () => {
                         onClick={() => setButtonText("Destination Booked")}
                       />
                     )}
-                    {daysToStay > 0 && (
+                    {(endDate.getDate() - startDate.getDate()) > 0 && (
                       <div>
                         <div className="pricing">
                           <h3>
                             <Icon name="rupee sign" />
                             {cartItem.price}
                             <Icon name="close" size="tini" />
-                            {daysToStay} night
+                            {endDate.getDate() - startDate.getDate()} night
                           </h3>
 
                           <h3>
@@ -329,8 +332,8 @@ const CityDetails = () => {
                             <Icon name="rupee sign" />
                             {Math.ceil(
                               totalNightsPrice +
-                                (totalNightsPrice * 17) / 100 -
-                                (totalNightsPrice * 20) / 100
+                              (totalNightsPrice * 17) / 100 -
+                              (totalNightsPrice * 20) / 100
                             )}
                           </h3>
                         </div>
