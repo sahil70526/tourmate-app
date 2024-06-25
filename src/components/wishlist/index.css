@@ -1,0 +1,95 @@
+.wishlist-card .image {
+  max-height: 100% !important;
+}
+.wishlist-card img {
+  width: 100%;
+}
+
+.city-card {
+  margin: 30px 30px;
+}
+
+.wishlist-card .city-card .ui.card > .content,
+.ui.cards > .card > .content {
+  text-align: left;
+  height: 210px;
+}
+.wishlist-card .city-card .ui.card {
+  width: 100%;
+}
+.wishlist-card .city-card .carousel-root {
+  height: 240px;
+}
+
+.wishlist-card .city-card .ui.card:hover {
+  transform: scale(1.04);
+  transition: 0.6s;
+}
+.wishlist-card .city-card .date {
+  color: #000;
+}
+.wishlist-card .city-card .cart-remove-btn {
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #01afd1 !important;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+}
+
+.wishlist-card .image {
+  min-height: 240px;
+  width: 100%;
+}
+.wishlist-card .content {
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+  padding-top: 10px;
+}
+h4 {
+  margin: 0px !important;
+}
+.wishlist-card .ui.card > .image:not(.ui) > img,
+.ui.cards > .card > .image:not(.ui) > img {
+  border: none;
+}
+
+.wishlist-card .carousel .slide .image {
+  height: 240px;
+  width: 100%;
+}
+.wishlist-card .image img {
+  height: 100%;
+  border-radius: 12px;
+}
+.city-card .carousel .carousel-status {
+  bottom: 0;
+}
+
+.wishlist-card .ui.card > .content > .header:not(.ui),
+.ui.cards > .card > .content > .header:not(.ui) {
+  display: flex;
+  justify-content: space-between;
+}
+.wishlist-card a {
+  color: #000 !important;
+  text-decoration: none;
+  width: 100%;
+  display: flex;
+  justify-content: space-between !important;
+}
+
+.wishlist-card .ui.secondary.button {
+  margin-top: 15px;
+}
+.wishlist-card .city-card .desc {
+  min-height: 45px;
+}
+.wishlist-card .name_city {
+  font-size: 17px;
+}
+.wishlist-card .ui.card,
+.ui.cards > .card {
+  box-shadow: none;
+}
