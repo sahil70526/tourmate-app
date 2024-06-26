@@ -99,7 +99,7 @@ const CityDetails = () => {
             <span>
               <span>
                 <Icon name="star" />
-                {cartItem.rating}
+                {cartItem.rating}, 
               </span>
               <span>10 reviews, </span>
               <span>{cartItem.cityName} ,</span>
